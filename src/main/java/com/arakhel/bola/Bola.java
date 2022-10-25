@@ -14,6 +14,9 @@ public class Bola {
     private int Berat;
     private String Warna, Nama;
     private final double pi=3.14;
+
+    public Bola() {
+    }
     
 
     public Bola(String Nama, double jariJari, int Berat, String Warna) {
@@ -23,16 +26,26 @@ public class Bola {
         this.Warna = Warna;
         this.Nama = Nama;
         this.volume = (4*this.pi*Math.pow(this.jariJari, 3))/3;
-        this.luas = 3*this.pi*Math.pow(this.jariJari, 2);
+        this.luas = 4*this.pi*Math.pow(this.jariJari, 2);
+    }
+    
+    public void infoBola(){
+        System.out.println("Nama = "+getNama());
+        System.out.println("Berat = "+getBerat());
+        System.out.println("Warna = "+getWarna());
+        System.out.println("Jari-jari = "+getJariJari());
+        System.out.println("Diameter = "+getDiameter());
+        System.out.println("Volume = "+Math.round(hitungVolume()));
+        System.out.println("Luas Permukaan "+Math.round(hitungLuasPermukaan()));
     }
 
-//    public double hitungVolume(){
-//        return (4*this.pi*Math.pow(this.jariJari, 3))/3;
-//    }
-//    
-//    public double hitungLuasPermukaan(){
-//        return 3*this.pi*Math.pow(this.jariJari, 2);
-//    }
+    public double hitungVolume(){
+        return (4*this.pi*Math.pow(this.jariJari, 3))/3;
+    }
+    
+    public double hitungLuasPermukaan(){
+        return 4*this.pi*Math.pow(this.jariJari, 2);
+    }
 
     public double getJariJari() {
         return jariJari;
